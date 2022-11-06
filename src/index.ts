@@ -279,7 +279,7 @@ export class TypeScriptPlugin {
     }
 
     if (service.package.individually) {
-      const functionNames = service.getAllFunctions()
+      const functionNames = Object.keys(this.functions)
       functionNames.forEach(name => {
         service.functions[name].package.artifact = path.join(
           this.originalServicePath,
